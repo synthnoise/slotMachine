@@ -1,0 +1,94 @@
+:root {
+    --icon-width: 79px;
+    --icon-height: 79px;
+    --num-icons: 9; /* 9 icons */
+}
+
+
+html, body {
+    height: 100%;
+    flex-direction: column;
+}
+
+body {
+    display: flex;
+    background-color: rgb(167, 162, 162);
+    justify-content: center;
+    align-items: center;
+}
+
+.slots {
+    width: calc(3.5 * var(--icon-width));
+    height: calc(3 * var(--icon-height));
+    display: flex;
+    padding: calc(0.3 * var(--icon-height));
+    justify-content: space-between;
+    background-color: black;
+    border-radius: 16px;
+}
+
+.slots .reel {
+    width: var(--icon-width);
+    height: calc(3 * var(--icon-height));
+    background-image: url(https://assets.codepen.io/439000/slotreel.webp);
+    background-repeat: repeat-y;
+    background-position: 0 0;
+}
+
+.start-container {
+    display: flex;
+    justify-content:center;
+    align-items: center;
+    width: 100%;
+    margin-top: 25px;
+    padding: 8px;
+}
+
+#start-button {
+    display: flex;
+    width: 150px;
+    height: 65px;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-size: 25px;
+}
+
+.score-tracker {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    width: 350px;
+    height: 150px;
+    background-color: whitesmoke;
+    border: 2px solid black;
+    padding:8px;
+    border-radius: 24px;
+    flex-direction: column;
+    margin-bottom: 25px;
+    overflow: hidden;
+}
+
+.score-tracker h1, .score-tracker h2, .score-tracker p {
+    margin: 4px 0;
+    font-size: 1.2em;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+@keyframes flashing {
+    0% { background-color: rgb(197, 197, 94); }
+    25% { background-color: black; }
+    50% { background-color: rgb(197, 197, 94); }
+    75% { background-color: black; }
+    100% { background-color: rgb(197, 197, 94); }
+}
+
+.flashing {
+    animation: flashing 1s infinite;
+}
